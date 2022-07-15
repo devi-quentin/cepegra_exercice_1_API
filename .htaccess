@@ -1,0 +1,13 @@
+RewriteEngine On
+#AUTH
+RewriteRule auth/logout$ auth.php?logout [L]
+RewriteRule auth$ auth.php [L]
+# USERS
+RewriteRule users/([0-9]+)$ users.php?id=$1 [L]
+RewriteRule users$ users.php [L]
+# STAGIAIRES
+RewriteRule stagiaires/([0-9]+)$ stagiaires.php?id=$1 [L]
+RewriteRule stagiaires$ stagiaires.php [L]
+# FORMATIONS
+RewriteRule formations/([0-9]+)$ formations.php?id=$1 [L]
+RewriteRule formations$ formations.php [L]
