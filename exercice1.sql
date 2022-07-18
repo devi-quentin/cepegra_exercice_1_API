@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 17 juil. 2022 à 22:11
+-- Généré le : lun. 18 juil. 2022 à 16:31
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -114,7 +114,9 @@ INSERT INTO `formations` (`id`, `id_metier`, `name`, `start_date`, `formateur`, 
 (3, 4, 'Web design FRONT-END', '2023-06-09', 'Pierre', 1),
 (4, 1, 'Illustrator', '2022-09-05', 'Inconnu', 3),
 (5, 4, 'Web design FRONT-END', '2024-06-07', 'Pierre', 1),
-(6, 1, 'formation de test', '2030-01-01', 'Roger', 4);
+(6, 1, 'formation de test', '2030-01-01', 'Roger', 4),
+(7, 4, 'Formation de test', '2022-07-18', 'Quentin', 4),
+(8, 4, 'TEST', '2026-10-18', 'monsieur test', 1);
 
 -- --------------------------------------------------------
 
@@ -219,11 +221,15 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `name`, `email`, `password`, `register_date`, `id_fonction`) VALUES
-(2, 'Quentin', 'Devillers', 'devi.quentin@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-15 09:24:22', 2),
+(2, 'Quentin', 'Devillers', 'stagiaire@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-15 09:24:22', 2),
 (3, 'Luc', 'Janson', 'luc.janson@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-15 11:24:19', 2),
-(4, 'Bernad', 'Dokk', 'dokk.bernard@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-15 11:24:55', 1),
+(4, 'Bernad', 'Dokk', 'secretaire@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-15 11:24:55', 1),
 (6, 'Quentin2', 'Devillers2', 'devi.quentin.2@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-15 13:36:07', 2),
-(7, 'Homer', 'Simpson', 'homer.simpson@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-15 13:45:14', 2);
+(7, 'Homer', 'Simpson', 'homer.simpson@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-15 13:45:14', 2),
+(8, 'Pina', 'Pintus', 'pina.devillers@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-18 10:33:24', 2),
+(9, 'Patrick', 'Dupuis', 'patrick.dupuis@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-18 14:00:06', 2),
+(10, 'Olaf', 'Duflanc', 'duflanc@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-18 14:01:12', 2),
+(11, 'Marc', 'Polo', 'polo.marc@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-18 14:02:12', 2);
 
 --
 -- Index pour les tables déchargées
@@ -304,7 +310,7 @@ ALTER TABLE `fonctions`
 -- AUTO_INCREMENT pour la table `formations`
 --
 ALTER TABLE `formations`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `ge`
@@ -334,7 +340,7 @@ ALTER TABLE `metiers`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Contraintes pour les tables déchargées

@@ -15,3 +15,7 @@ RewriteRule formations$ formations.php [L]
 # METIERS
 RewriteRule metiers/([0-9]+)$ metiers.php?id=$1 [L]
 RewriteRule metiers$ metiers.php [L]
+# LIEUX
+RewriteRule lieux/([0-9]+)$ lieux.php?id=$1 [L]
+RewriteRule lieux$ lieux.php [L]
+# 

@@ -5,7 +5,7 @@ include 'includes/headers.php';
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // TOUS LES USERS
     if(!isset($_GET['id'])) {
-        $sql = "SELECT inscriptions.id, users.firstname, users.name, users.email, users.register_date, formations.name AS formation_name FROM inscriptions 
+        $sql = "SELECT inscriptions.id, inscriptions.id_user, users.firstname, users.name, users.email, users.register_date, formations.name AS formation_name, formations.id AS formation_id FROM inscriptions 
         LEFT JOIN users ON inscriptions.id_user = users.id 
         LEFT JOIN formations ON inscriptions.id_formation = formations.id";
         $result = $connect->query($sql);
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
     // UN USER
     else {
-        $sql = sprintf("SELECT inscriptions.id, users.firstname, users.name, users.email, users.register_date, formations.name AS formation_name FROM inscriptions 
+        $sql = sprintf("SELECT inscriptions.id, inscriptions.id_user, users.firstname, users.name, users.email, users.register_date, formations.name AS formation_name, formations.id AS formation_id FROM inscriptions 
         LEFT JOIN users ON inscriptions.id_user = users.id 
         LEFT JOIN formations ON inscriptions.id_formation = formations.id WHERE users.id = '%d'",
         $_GET['id']);

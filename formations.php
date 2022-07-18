@@ -1,7 +1,7 @@
 <?php
 include 'includes/config.php';
 include 'includes/headers.php';
-include 'includes/verif_auth.php';
+// include 'includes/verif_auth.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
