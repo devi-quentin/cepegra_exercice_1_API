@@ -1,6 +1,7 @@
 RewriteEngine On
 #AUTH
 RewriteRule auth/logout$ auth.php?logout [L]
+RewriteRule check-connected$ includes/verif_auth.php [L]
 RewriteRule auth$ auth.php [L]
 # USERS
 RewriteRule users/([0-9]+)$ users.php?id=$1 [L]
@@ -11,3 +12,6 @@ RewriteRule stagiaires$ stagiaires.php [L]
 # FORMATIONS
 RewriteRule formations/([0-9]+)$ formations.php?id=$1 [L]
 RewriteRule formations$ formations.php [L]
+# METIERS
+RewriteRule metiers/([0-9]+)$ metiers.php?id=$1 [L]
+RewriteRule metiers$ metiers.php [L]
