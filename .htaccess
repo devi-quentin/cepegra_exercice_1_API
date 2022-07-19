@@ -6,9 +6,9 @@ RewriteRule auth$ auth.php [L]
 # USERS
 RewriteRule users/([0-9]+)$ users.php?id=$1 [L]
 RewriteRule users$ users.php [L]
-# STAGIAIRES
-RewriteRule stagiaires/([0-9]+)$ stagiaires.php?id=$1 [L]
-RewriteRule stagiaires$ stagiaires.php [L]
+# INSCRIPTIONS
+RewriteRule inscriptions/([0-9]+)$ inscriptions.php?id=$1 [L]
+RewriteRule inscriptions$ inscriptions.php [L]
 # FORMATIONS
 RewriteRule formations/([0-9]+)$ formations.php?id=$1 [L]
 RewriteRule formations$ formations.php [L]
@@ -18,4 +18,8 @@ RewriteRule metiers$ metiers.php [L]
 # LIEUX
 RewriteRule lieux/([0-9]+)$ lieux.php?id=$1 [L]
 RewriteRule lieux$ lieux.php [L]
+# CRETIERES EVALUATIONS
+RewriteRule criteres-evaluations/metier/([0-9]+)$ criteres-evaluations.php?id_metier=$1 [L]
+RewriteRule criteres-evaluations/([0-9]+)$ criteres-evaluations.php?id=$1 [L]
+RewriteRule criteres-evaluations$ criteres-evaluations.php [L]
 # 

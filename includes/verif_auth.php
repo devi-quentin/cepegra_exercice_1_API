@@ -35,4 +35,4 @@ else:
         // echo json_encode($response);
     endif;
 endif;
-$_SESSION['expiration'] = time() + 1 * 60;
+$_SESSION['expiration'] = time() + 10 * 60;

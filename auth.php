@@ -51,11 +51,13 @@ else:
         $_SESSION['user'] = $row['id'];
         $_SESSION['token'] = md5($row['email'].time());
         $_SESSION['function'] = $row['id_fonction'];
-        $_SESSION['expiration'] = time() + 1 * 60;
+        $_SESSION['expiration'] = time() + 10 * 60;
 
         $response['response'] = "Connecté";
         $response['token'] = $_SESSION['token'];
         $response['function'] = $_SESSION['function'];
+        $response['userid'] = $_SESSION['user'];
+        $response['username'] = $row['firstname'] . " " . $row['name'];
         $response['ok'] = true;
     endif;
 endif;

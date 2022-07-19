@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 18 juil. 2022 à 16:31
+-- Généré le : mar. 19 juil. 2022 à 16:08
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -41,12 +41,12 @@ CREATE TABLE `criteres_evaluations` (
 --
 
 INSERT INTO `criteres_evaluations` (`id`, `label`, `content`, `type`, `id_theme`, `id_metier`) VALUES
-(1, 'Esprit d\'analyse', 'J\'analyse les problèmes pour y trouver des solutions\r\nCapacité de réfléchir et de faire montre de logique et de jugement face à des décisions, d\'évaluer des problèmes ou des situations en faisant les recherches nécessaires et en analysant les différentes composantes', 'theme', NULL, 4),
-(2, 'Curiosité intellectuelle', 'Je suis curieux intellectuellement pour ce qui touche à mon métier\r\nCapacité d\'ouvrir son champ de connaissance, d\'avoir l\'esprit ouvert, d\'acquérir continuellement de nouvelles connaissances et d\'apprendre de ses expériences antérieures', 'theme', NULL, 4),
-(3, 'Autonomie', 'Je mène ma barque.\r\nCapacité de se prendre en charge, selon ses responsabilités, de façon à poser des actions au moment opportun dans un contexte déterminé', 'theme', NULL, 4),
-(4, 'Acceptation de la critique', 'J\'accepte les commentaires dans le but d\'améliorer mon travail.\r\nCapacité de recevoir des commentaires et des remarques dans le but d\'améliorer son travail', 'theme', NULL, 4),
-(5, 'Sens de l\'organisation', 'Je planifie, prépare et organise mon travail pour respecter les échéances.\r\nCapacité de gérer efficacement et rationnellement son travail et de planifier les tâches à effectuer dans un délai prescrit\r\n', 'theme', NULL, 4),
-(6, 'Motivation', 'Je suis enthousiaste dans la réalisation de mes tâches.\r\nCapacité d\'avoir de l\'énergie et de la vitalité et à afficher intérêt et enthousiasme face à une tâche professionnelle\r\n', 'theme', NULL, 4),
+(1, 'Esprit d\'analyse', '<strong>J\'analyse les problèmes pour y trouver des solutions</strong><br>\nCapacité de réfléchir et de faire montre de logique et de jugement face à des décisions, d\'évaluer des problèmes ou des situations en faisant les recherches nécessaires et en analysant les différentes composantes', 'theme', NULL, 4),
+(2, 'Curiosité intellectuelle', '<strong>Je suis curieux intellectuellement pour ce qui touche à mon métier</strong><br>\nCapacité d\'ouvrir son champ de connaissance, d\'avoir l\'esprit ouvert, d\'acquérir continuellement de nouvelles connaissances et d\'apprendre de ses expériences antérieures', 'theme', NULL, 4),
+(3, 'Autonomie', '<strong>Je mène ma barque</strong><br>\nCapacité de se prendre en charge, selon ses responsabilités, de façon à poser des actions au moment opportun dans un contexte déterminé', 'theme', NULL, 4),
+(4, 'Acceptation de la critique', '<strong>J\'accepte les commentaires dans le but d\'améliorer mon travail</strong><br>\nCapacité de recevoir des commentaires et des remarques dans le but d\'améliorer son travail', 'theme', NULL, 4),
+(5, 'Sens de l\'organisation', '<strong>Je planifie, prépare et organise mon travail pour respecter les échéances</strong><br>\nCapacité de gérer efficacement et rationnellement son travail et de planifier les tâches à effectuer dans un délai prescrit\n', 'theme', NULL, 4),
+(6, 'Motivation', '<strong>Je suis enthousiaste dans la réalisation de mes tâches</strong><br>\nCapacité d\'avoir de l\'énergie et de la vitalité et à afficher intérêt et enthousiasme face à une tâche professionnelle\n', 'theme', NULL, 4),
 (7, NULL, 'Je me fie à mon instinct et je commence à travailler sans réflexion', 'option', 1, 4),
 (8, NULL, 'Je consulte le web à la recherche d\'une solution toute faite. Je fais appel à quelqu\'un pour m\'aider.', 'option', 1, 4),
 (9, NULL, 'Je décompose un problème en sous-éléments en utilisant un schéma. Je consulte différentes ressources & documentations pour parvenir à une solution.', 'option', 1, 4),
@@ -111,12 +111,9 @@ CREATE TABLE `formations` (
 --
 
 INSERT INTO `formations` (`id`, `id_metier`, `name`, `start_date`, `formateur`, `id_lieu`) VALUES
-(3, 4, 'Web design FRONT-END', '2023-06-09', 'Pierre', 1),
-(4, 1, 'Illustrator', '2022-09-05', 'Inconnu', 3),
-(5, 4, 'Web design FRONT-END', '2024-06-07', 'Pierre', 1),
-(6, 1, 'formation de test', '2030-01-01', 'Roger', 4),
-(7, 4, 'Formation de test', '2022-07-18', 'Quentin', 4),
-(8, 4, 'TEST', '2026-10-18', 'monsieur test', 1);
+(9, 4, 'Web Front-End', '2022-06-10', 'Pierre Charlier', 1),
+(10, 4, 'Web Front-End', '2023-06-09', 'Pierre Charlier', 1),
+(11, 1, 'Illustrator', '2022-09-05', 'Illustre Inconnu', 3);
 
 -- --------------------------------------------------------
 
@@ -158,8 +155,17 @@ CREATE TABLE `inscriptions` (
 --
 
 INSERT INTO `inscriptions` (`id`, `id_user`, `id_formation`) VALUES
-(1, 2, 3),
-(2, 3, 4);
+(11, 12, 11),
+(12, 13, 11),
+(13, 2, 9),
+(14, 9, 9),
+(15, 10, 9),
+(16, 11, 9),
+(17, 3, 9),
+(18, 8, 9),
+(19, 13, 9),
+(20, 11, 10),
+(21, 2, 11);
 
 -- --------------------------------------------------------
 
@@ -229,7 +235,10 @@ INSERT INTO `users` (`id`, `firstname`, `name`, `email`, `password`, `register_d
 (8, 'Pina', 'Pintus', 'pina.devillers@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-18 10:33:24', 2),
 (9, 'Patrick', 'Dupuis', 'patrick.dupuis@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-18 14:00:06', 2),
 (10, 'Olaf', 'Duflanc', 'duflanc@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-18 14:01:12', 2),
-(11, 'Marc', 'Polo', 'polo.marc@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-18 14:02:12', 2);
+(11, 'Marc', 'Polo', 'polo.marc@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-18 14:02:12', 2),
+(12, 'Elan', 'Must', 'elan.must@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-19 09:59:56', 2),
+(13, 'Walter', 'Blue', 'walter.blue@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-19 10:01:09', 2),
+(14, 'nouveau', 'nouveau', 'nouveau@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-19 11:38:52', 2);
 
 --
 -- Index pour les tables déchargées
@@ -310,7 +319,7 @@ ALTER TABLE `fonctions`
 -- AUTO_INCREMENT pour la table `formations`
 --
 ALTER TABLE `formations`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `ge`
@@ -322,7 +331,7 @@ ALTER TABLE `ge`
 -- AUTO_INCREMENT pour la table `inscriptions`
 --
 ALTER TABLE `inscriptions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT pour la table `lieux`
@@ -340,7 +349,7 @@ ALTER TABLE `metiers`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Contraintes pour les tables déchargées

@@ -7,7 +7,7 @@ include 'includes/headers.php';
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // TOUTES LES FORMATIONS
     if(!isset($_GET['id'])) {
-        $sql = "SELECT formations.id, formations.name, formations.start_date, formations.formateur, metiers.name AS metier, lieux.name AS lieux FROM formations
+        $sql = "SELECT formations.id, formations.id_metier, formations.name, formations.start_date, formations.formateur, metiers.name AS metier, lieux.name AS lieux FROM formations
         LEFT JOIN metiers ON formations.id_metier = metiers.id        
         LEFT JOIN lieux ON formations.id_lieu = lieux.id";
         $result = $connect->query($sql);
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
     // UN USER
     else {
-        $sql = sprintf("SELECT formations.id, formations.name, formations.start_date, formations.formateur, metiers.name AS metier, lieux.name AS lieux FROM formations
+        $sql = sprintf("SELECT formations.id, formations.id_metier, formations.name, formations.start_date, formations.formateur, metiers.name AS metier, lieux.name AS lieux FROM formations
         LEFT JOIN metiers ON formations.id_metier = metiers.id        
         LEFT JOIN lieux ON formations.id_lieu = lieux.id WHERE formations.id = '%d'",
         $_GET['id']);
