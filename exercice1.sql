@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 19 juil. 2022 à 16:08
+-- Généré le : mer. 20 juil. 2022 à 11:26
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -113,7 +113,8 @@ CREATE TABLE `formations` (
 INSERT INTO `formations` (`id`, `id_metier`, `name`, `start_date`, `formateur`, `id_lieu`) VALUES
 (9, 4, 'Web Front-End', '2022-06-10', 'Pierre Charlier', 1),
 (10, 4, 'Web Front-End', '2023-06-09', 'Pierre Charlier', 1),
-(11, 1, 'Illustrator', '2022-09-05', 'Illustre Inconnu', 3);
+(11, 1, 'Illustrator', '2022-09-05', 'Illustre Inconnu', 3),
+(12, 4, 'ALPHA', '2022-07-22', 'azeaze', 4);
 
 -- --------------------------------------------------------
 
@@ -135,8 +136,20 @@ CREATE TABLE `ge` (
   `id_option_4` int(11) NOT NULL,
   `id_theme_5` int(11) NOT NULL,
   `id_option_5` int(11) NOT NULL,
+  `id_theme_6` int(11) NOT NULL,
+  `id_option_6` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `ge`
+--
+
+INSERT INTO `ge` (`id`, `id_user`, `id_metier`, `id_theme_1`, `id_option_1`, `id_theme_2`, `id_option_2`, `id_theme_3`, `id_option_3`, `id_theme_4`, `id_option_4`, `id_theme_5`, `id_option_5`, `id_theme_6`, `id_option_6`, `date`) VALUES
+(1, 2, 4, 1, 10, 2, 12, 3, 17, 4, 19, 5, 23, 6, 29, '2022-07-20 07:20:55'),
+(2, 3, 4, 1, 8, 2, 13, 3, 17, 4, 19, 5, 26, 6, 30, '2022-07-20 07:22:03'),
+(3, 13, 4, 1, 10, 2, 14, 3, 18, 4, 21, 5, 25, 6, 30, '2022-07-20 07:24:25'),
+(4, 2, 4, 1, 7, 2, 12, 3, 15, 4, 20, 5, 26, 6, 27, '2022-07-20 08:24:49');
 
 -- --------------------------------------------------------
 
@@ -165,7 +178,18 @@ INSERT INTO `inscriptions` (`id`, `id_user`, `id_formation`) VALUES
 (18, 8, 9),
 (19, 13, 9),
 (20, 11, 10),
-(21, 2, 11);
+(21, 2, 11),
+(22, 13, 12),
+(23, 2, 12),
+(24, 3, 12),
+(25, 6, 12),
+(26, 7, 12),
+(27, 8, 12),
+(28, 9, 12),
+(29, 10, 12),
+(30, 11, 12),
+(31, 12, 12),
+(32, 14, 12);
 
 -- --------------------------------------------------------
 
@@ -238,7 +262,8 @@ INSERT INTO `users` (`id`, `firstname`, `name`, `email`, `password`, `register_d
 (11, 'Marc', 'Polo', 'polo.marc@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-18 14:02:12', 2),
 (12, 'Elan', 'Must', 'elan.must@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-19 09:59:56', 2),
 (13, 'Walter', 'Blue', 'walter.blue@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-19 10:01:09', 2),
-(14, 'nouveau', 'nouveau', 'nouveau@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-19 11:38:52', 2);
+(14, 'nouveau', 'nouveau', 'nouveau@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-19 11:38:52', 2),
+(15, 'Jean', 'Dujradin', 'devi.quentin@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', '2022-07-20 08:08:12', 1);
 
 --
 -- Index pour les tables déchargées
@@ -319,19 +344,19 @@ ALTER TABLE `fonctions`
 -- AUTO_INCREMENT pour la table `formations`
 --
 ALTER TABLE `formations`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `ge`
 --
 ALTER TABLE `ge`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `inscriptions`
 --
 ALTER TABLE `inscriptions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT pour la table `lieux`
@@ -349,7 +374,7 @@ ALTER TABLE `metiers`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Contraintes pour les tables déchargées
