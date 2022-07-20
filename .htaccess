@@ -3,6 +3,9 @@ RewriteEngine On
 RewriteRule auth/logout$ auth.php?logout [L]
 RewriteRule check-connected$ includes/verif_auth.php [L]
 RewriteRule auth$ auth.php [L]
+# GE
+RewriteRule ge/users/([0-9]+)$ ge.php?id_user=$1 [L]
+RewriteRule ge$ ge.php [L]
 # USERS
 RewriteRule users/([0-9]+)$ users.php?id=$1 [L]
 RewriteRule users$ users.php [L]
@@ -21,5 +24,3 @@ RewriteRule lieux$ lieux.php [L]
 # CRITERES EVALUATIONS
 RewriteRule criteres-evaluations/metier/([0-9]+)$ criteres-evaluations.php?id_metier=$1 [L]
 RewriteRule criteres-evaluations$ criteres-evaluations.php [L]
-# GE
-RewriteRule ge$ ge.php [L]

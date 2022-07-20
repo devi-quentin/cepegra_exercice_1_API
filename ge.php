@@ -5,7 +5,14 @@ include 'includes/headers.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    $responseJSON['message'] = "Route GET pas encore active";
+    if (isset($_GET['id_user'])) {
+        $sql = 'SELECT * FROM ge WHERE id_user = ' . $_GET['id_user'];
+        $result = $connect->query($sql);
+        $response = $result->fetch_all(MYSQLI_ASSOC);
+        $responseJSON['data'] = $response;
+        $responseJSON['message'] = "GE du stagiaire";
+    }
+    $responseJSON['message'] = "Il manque un parametre d'url";
 }
 
 // POST
@@ -29,7 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
         id_theme_5='%d',
         id_option_5='%d',
         id_theme_6='%d',
-        id_option_6='%d'",
+        id_option_6='%d',
+        value_1='%d',
+        value_2='%d',
+        value_3='%d',
+        value_4='%d',
+        value_5='%d',
+        value_6='%d'",
         strip_tags(addslashes($objectPOST->id_user)),
         strip_tags(addslashes($objectPOST->id_metier)),
         strip_tags(addslashes($objectPOST->id_theme_1)),
@@ -44,6 +57,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
         strip_tags(addslashes($objectPOST->id_option_5)),
         strip_tags(addslashes($objectPOST->id_theme_6)),
         strip_tags(addslashes($objectPOST->id_option_6)),
+        strip_tags(addslashes($objectPOST->value_1)),
+        strip_tags(addslashes($objectPOST->value_2)),
+        strip_tags(addslashes($objectPOST->value_3)),
+        strip_tags(addslashes($objectPOST->value_4)),
+        strip_tags(addslashes($objectPOST->value_5)),
+        strip_tags(addslashes($objectPOST->value_6)),
     );
     $responseJSON['sql'] = $sql;
     

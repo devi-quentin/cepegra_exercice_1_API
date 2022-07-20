@@ -47,13 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
     $sql = "INSERT INTO inscriptions (id_user, id_formation) VALUES $val";
 
     $responseJSON['sql'] = $sql;
-    print_r($sql);
     
     // Execution de la requete
     $connect->query($sql);
     echo $connect->error;
     $responseJSON['message'] = "Stagiaires inscrits avec succès";
     $responseJSON['new_id'] = $connect->insert_id;
+    $responseJSON['code'] = 200;
        
 endif; // END POST
 
