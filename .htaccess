@@ -18,8 +18,8 @@ RewriteRule metiers$ metiers.php [L]
 # LIEUX
 RewriteRule lieux/([0-9]+)$ lieux.php?id=$1 [L]
 RewriteRule lieux$ lieux.php [L]
-# CRETIERES EVALUATIONS
+# CRITERES EVALUATIONS
 RewriteRule criteres-evaluations/metier/([0-9]+)$ criteres-evaluations.php?id_metier=$1 [L]
-RewriteRule criteres-evaluations/([0-9]+)$ criteres-evaluations.php?id=$1 [L]
 RewriteRule criteres-evaluations$ criteres-evaluations.php [L]
-# 
+# GE
+RewriteRule ge$ ge.php [L]

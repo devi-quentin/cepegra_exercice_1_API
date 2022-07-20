@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
     $response1 = $result1->fetch_all();
 
     // SI EMAIL DEJA EXISTANT
-    if (strip_tags(addslashes($objectPOST->email)) == $response1[0][0]) {
+    if (count($response1) > 0) {
         $responseJSON['message'] = "Email déjà existant";
         $responseJSON['code'] = 403;
     }
